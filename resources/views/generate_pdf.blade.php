@@ -5,6 +5,7 @@
 </head>
 <body>
     <img src="{{ public_path('images/logocmm.png') }}"  style="width: 432px; height: 121px;"/>
+    <p>{{$address1}} {{$address2}} {{$address3}}</p>
   <h1>{{ $heading}}</h1>
   <div class="d-sm-flex align-items-center justify-content-between mb-4"> 
         <table style="
