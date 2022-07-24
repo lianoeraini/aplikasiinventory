@@ -77,7 +77,7 @@
                     <div class="bg-dark0001 py-2 collapse-inner rounded">
                         
                         <a class="collapse-item fas fa-arrow-circle-right" href="{{route('barangmasuk.index')}}" > Barang Masuk  </a>
-                        <a class="collapse-item fas fa-arrow-circle-right" href="#"> Barang Keluar  </a>
+                        <a class="collapse-item fas fa-arrow-circle-right" href="{{route('barangkeluar.index')}}"> Barang Keluar  </a>
                     </div>
                 </div>
             </li>
@@ -99,7 +99,7 @@
         <div id="collapseLaporan" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Menu Laporan:</h6>
-            <a class="collapse-item" href="?page=laporan_gudang">Laporan Stok Gudang</a>
+            <a class="collapse-item" href="{{route('report.index')}}">Laporan Stok Gudang</a>
           </div>
         </div>
       </li>

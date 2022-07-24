@@ -8,7 +8,7 @@ use App\Barang;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facaded\DB;
 
-class barangController extends Controller
+class LaporanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +17,13 @@ class barangController extends Controller
      */
     public function index()
     {
-        $barang=\App\Barang::All(); 
-        return view('admin.barang',['barang'=>$barang]);
+        $reports=\App\Report::All(); 
+        return view('admin.report',['reports'=>$reports]);
     }
 
     public function getBaraang()
     {
-        $barang=\App\Barang::All(); 
-        return view('admin.barangmasuk',['barang'=>$barang]);
+
     }
 
     /**
@@ -45,14 +44,7 @@ class barangController extends Controller
      */
     public function store(Request $request)
     {
-        $tambah_barang=new \App\Barang; 
-        $tambah_barang->kd_brg = $request->addkdbrg; 
-        $tambah_barang->nm_brg = $request->addnmbrg; 
-        $tambah_barang->harga = $request->addharga; 
-        $tambah_barang->stok = $request->addstok; 
-        $tambah_barang->save(); 
-        Alert::success('Pesan','Data berhasil disimpan'); 
-        return redirect()->route('barang.index')->with('alert','hello');
+        
     }
 
     /**
@@ -74,8 +66,7 @@ class barangController extends Controller
      */
     public function edit($id)
     {
-        $barang_edit= \App\Barang::findOrFail($id);
-        return view('admin.editBarang',['barang'=>$barang_edit]);
+       
     }
 
     /**
@@ -87,14 +78,7 @@ class barangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $update_barang = \App\Barang::findOrFail($id); 
-        $update_barang->kd_brg=$request->get('addkdbrg'); 
-        $update_barang->nm_brg=$request->get('addnmbrg'); 
-        $update_barang->harga=$request->get('addharga'); 
-        $update_barang->stok=$request->get('addstok'); 
-        $update_barang->save(); 
-        Alert::success('Update', 'Data Berhasil di update');
-        return redirect()->route('barang.index');
+        
     }
 
     /**
@@ -105,9 +89,6 @@ class barangController extends Controller
      */
     public function destroy($id)
     {
-        $barang=\App\Barang::findOrFail($id); 
-        $barang->delete(); 
-        Alert::success('Pesan','Data berhasil dihapus'); 
-        return redirect()->route('barang.index');
+       
     }
 }

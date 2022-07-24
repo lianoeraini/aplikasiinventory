@@ -31,4 +31,6 @@ Route::group(['middleware' => ['role:admin']], function(){
     Route::get('/akun/hapus/{id}','akunController@destroy');
     Route::resource('/barangmasuk','barangmasukController');
     Route::resource('/barangkeluar','barangkeluarController');
+    Route::resource('/report','LaporanController');
 });
+Route::get('/pdf', 'PdfController@print')->name('print');

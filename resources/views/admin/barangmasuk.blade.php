@@ -1,12 +1,13 @@
 @extends('layouts.layout')
 @section('content')
 @include('sweetalert::alert')
+<h1>Input Barang Masuk</h1>
 <div class="mb-3 col-4 justify-center">
-<form action="{{ action('barangmasukController@inputBarangMasuk') }}" method="POST"> @csrf 
+<form action="{{ action('barangmasukController@store') }}" method="POST"> @csrf 
 <label for="exampleFormControlInput1" class="form-label row">Pilih Barang</label>
-    <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+    <select class="form-select form-select-lg mb-3" aria-label="Default select example" name="brg" id="brg">
     @foreach($barangmasuk as $brg)
-    <option value="{{$brg->id}}">{{$brg->nm_brg}}     </option>
+    <option value="{{$brg->kd_brg}}">{{$brg->nm_brg}}</option>
                @endforeach
     </select>
 <div class="row mt-2">
